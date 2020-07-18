@@ -15,11 +15,11 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
- * A two column layout for the boost theme.
+ * A two column layout for the primary theme.
  *
- * @package   theme_boost
- * @copyright 2016 Damyon Wiese
- * @license   http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ * @package    theme_primary
+ * @copyright  2020 NYIAJ LLC
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
 defined('MOODLE_INTERNAL') || die();
