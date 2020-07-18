@@ -37,15 +37,15 @@ $THEME->scss = function($theme) {
 };
 
 $THEME->layouts = [
-
+    // Most backwards compatible layout without the blocks - this is the layout used by default.
+    'base' => array(
+        'file' => 'columns2.php',
+        'regions' => array(),
+    ),
 ];
 
 $THEME->parents = ['boost'];
 $THEME->enable_dock = false;
-$THEME->csstreepostprocessor = 'theme_boost_css_tree_post_processor';
-$THEME->extrascsscallback = 'theme_boost_get_extra_scss';
-$THEME->prescsscallback = 'theme_boost_get_pre_scss';
-$THEME->precompiledcsscallback = 'theme_boost_get_precompiled_css';
 $THEME->yuicssmodules = array();
 $THEME->rendererfactory = 'theme_overridden_renderer_factory';
 $THEME->requiredblocks = '';

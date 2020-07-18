@@ -1,0 +1,34 @@
+/*!
+ *   AdminLTE v3.0.5
+ *   Author: Colorlib
+ *   Website: AdminLTE.io <http://adminlte.io>
+ *   License: Open source - MIT <http://opensource.org/licenses/MIT>
+ */
+// Bootstrap
+// ---------------------------------------------------
+
+// Import FontAwesome.
+@import "../../boost/scss/fontawesome";
+
+@import 'bootstrap/functions'; // Import functions first.
+@import 'bootstrap-variables';
+// Import All of Bootstrap
+@import "bootstrap";
+
+// Import Core moodle CSS
+@import "../../boost/scss/moodle";
+
+
+// Variables and Mixins
+// ---------------------------------------------------
+@import 'variables';
+@import 'mixins';
+
+@import 'parts/core';
+@import 'parts/components';
+@import 'cards';
+@import 'parts/extra-components';
+@import 'parts/pages';
+@import 'parts/plugins';
+@import 'parts/miscellaneous';
+
