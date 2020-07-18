@@ -1,0 +1,41 @@
+{{!
+    This file is part of Moodle - http://moodle.org/
+
+    Moodle is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation, either version 3 of the License, or
+    (at your option) any later version.
+
+    Moodle is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
+}}
+{{!
+    @template theme_primary/search_box
+
+    Render global search box
+
+    Context variables required for this template:
+    * id - Div id
+    * action - Form action Moodle URL
+
+    Example context (json):
+    {
+        "id": "search123"
+    }
+}}
+<!-- SEARCH FORM -->
+<form class="form-inline ml-3" action="{{ action }}">
+    <div class="input-group input-group-sm">
+        <input class="form-control form-control-navbar" type="search" name="q" placeholder="{{#str}}search{{/str}}" aria-label="{{#str}}search{{/str}}">
+        <div class="input-group-append">
+            <button class="btn btn-secondary" type="submit">
+                <i class="fa fa-search"></i>
+            </button>
+        </div>
+    </div>
+</form>
