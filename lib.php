@@ -33,5 +33,5 @@ defined('MOODLE_INTERNAL') || die();
 function theme_primary_get_main_scss_content($theme) {
     global $CFG;
 
-    return file_get_contents($CFG->dirroot . '/theme/primary/scss/AdminLTE.scss');
+    return file_get_contents($CFG->dirroot . '/theme/primary/scss/primary.scss');
 }

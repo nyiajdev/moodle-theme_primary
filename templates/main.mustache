@@ -67,6 +67,14 @@
 {{#js}}
     M.util.js_pending('theme_boost/loader');
     require(['theme_boost/loader'], function() {
-    M.util.js_complete('theme_boost/loader');
+        M.util.js_complete('theme_boost/loader');
+    });
+    require(['theme_primary/AdminLTE'], function() {
+        $(document).on('shown.lte.pushmenu', function() {
+            M.util.set_user_preference('drawer-open-nav', 'true');
+        });
+        $(document).on('collapsed.lte.pushmenu', function() {
+            M.util.set_user_preference('drawer-open-nav', 'false');
+        });
     });
 {{/js}}

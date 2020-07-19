@@ -27,7 +27,6 @@
     * bodyattributes - attributes for the body tag as a string of html attributes
     * sidepreblocks - HTML for the blocks
     * hasblocks - true if there are blocks on this page
-    * navdraweropen - true if the nav drawer should be open on page load
     * regionmainsettingsmenu - HTML for the region main settings menu
     * hasregionmainsettingsmenu - There is a region main settings menu on this page.
 
@@ -43,7 +42,6 @@
         "bodyattributes":"",
         "sidepreblocks": "<h2>Blocks html goes here</h2>",
         "hasblocks":true,
-        "navdraweropen":true,
         "regionmainsettingsmenu": "",
         "hasregionmainsettingsmenu": false
     }
@@ -53,10 +51,48 @@
     {{$body}}
         <div class="wrapper">
             {{> theme_primary/navbar }}
-            {{{ output.course_content_header }}}
-            {{{ output.main_content }}}
-            {{{ output.activity_navigation }}}
-            {{{ output.course_content_footer }}}
+            {{> theme_primary/sidebar }}
+            <!-- Content Wrapper. Contains page content -->
+            <div class="content-wrapper">
+
+                <!-- Content Header (Page header) -->
+                <div class="content-header">
+                    {{{ output.full_header }}}
+                    <div class="container-fluid">
+                        <div class="row mb-2">
+                            <div class="col-sm-6">
+                                <h1 class="m-0 text-dark">Dashboard</h1>
+                            </div><!-- /.col -->
+                            <div class="col-sm-6">
+                                <ol class="breadcrumb float-sm-right">
+                                    <li class="breadcrumb-item"><a href="#">Home</a></li>
+                                    <li class="breadcrumb-item active">Dashboard v1</li>
+                                </ol>
+                            </div><!-- /.col -->
+                        </div><!-- /.row -->
+                    </div><!-- /.container-fluid -->
+                </div>
+                <!-- /.content-header -->
+
+                <!-- Main content -->
+                <section class="content">
+                    <div class="container-fluid">
+                        <!-- Small boxes (Stat box) -->
+                        <div class="row">
+                            <div class="col">
+                                {{{ output.course_content_header }}}
+                                    <div class="card">
+                                        <div class="card-body">
+                                            {{{ output.main_content }}}
+                                        </div>
+                                    </div>
+                                {{{ output.activity_navigation }}}
+                                {{{ output.course_content_footer }}}
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
         </div>
     {{/body}}
 {{/theme_primary/main}}

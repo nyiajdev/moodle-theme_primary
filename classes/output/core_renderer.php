@@ -71,4 +71,29 @@ class core_renderer extends \core_renderer {
             'action' => new \moodle_url('/search/index.php')
         ]);
     }
+
+    public function user_panel() {
+        global $USER, $PAGE;
+
+        if (!$USER->id) {
+            return '';
+        }
+
+        $USER->fullname = fullname($USER);
+
+        $userpicture = new \user_picture($USER);
+
+        if ($coursecontext = $PAGE->context->get_course_context(false)) {
+            $profileurl = new \moodle_url('/user/view.php',
+                ['id' => $USER->id, 'course' => $coursecontext->instanceid]);
+        } else {
+            $profileurl = new \moodle_url('/user/profile.php', ['id' => $USER->id]);
+        }
+
+        return $this->render_from_template('theme_primary/user_panel', [
+            'userpictureurl' => $userpicture->get_url($PAGE),
+            'userprofileurl' => $profileurl,
+            'user' => $USER
+        ]);
+    }
 }
